@@ -1,0 +1,185 @@
+Appended on 2024-07-22 01:10:40:
+
+Appended on 2024-07-22 01:16:39:
+2393251
+2534843
+2394819
+2392298
+2398498
+2392398
+
+
+Appended on 2024-07-22 01:32:58:
+2534843
+2392298
+2393251
+2394819
+2392398
+2398498
+
+Appended on 2024-07-22 09:52:18:
+2382009
+2381993
+2385718
+
+Appended on 2024-07-22 11:17:31:
+2377708
+2319278
+2362384
+2371717
+2374130
+2342240
+2364297
+2355613
+2324655
+2348883
+2343768
+2344852
+2351703
+2366900
+2362395
+2343699
+2363336
+2354796
+2325195
+2363978
+2370949
+2322713
+
+Appended on 2024-07-22 13:57:31:
+2275824
+2276509
+2285463
+2259726
+2286172
+2257234
+2239962
+2296461
+2266156
+2263772
+2257232
+2275815
+2183448
+2234735
+2266143
+2187208
+2257217
+2236117
+2203906
+2212043
+2257214
+2296396
+2239972
+2293692
+2257677
+2227818
+2211300
+2275663
+2188583
+
+Appended on 2024-07-22 18:08:40:
+2075601
+2091325
+2090365
+2051351
+2079009
+2000044
+2092391
+2085871
+2050458
+2173794
+2013453
+2019385
+2019373
+2039713
+2090607
+2163098
+2091274
+2135483
+2148846
+2143420
+2000024
+2160559
+2163071
+2021857
+2143530
+2104842
+2116658
+2099546
+2176137
+2113456
+2091322
+2090608
+2080427
+2077443
+2071047
+
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2075601/110.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2092391/41.jpg (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:992)')))
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2019373/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 2/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2019373/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 3/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2019373/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 4/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2019373/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 5/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2019373/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 6/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2019373/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 7/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2019373/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 8/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2019373/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Traceback (most recent call last):
+  File "E:\Storage\Book\Manga\Hanime\spider1\GetBook\Get_Book_1_jpg.py", line 61, in <module>
+    main()
+  File "E:\Storage\Book\Manga\Hanime\spider1\GetBook\Get_Book_1_jpg.py", line 51, in main
+    prev_sizes.append(os.path.getsize(file_path))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen genericpath>", line 50, in getsize
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'E:\\Storage\\Book\\Manga\\Hanime\\spider1\\Book/2019373/195.jpg'
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2039713/157.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 2/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2039713/157.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 3/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2039713/157.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 4/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2039713/157.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 5/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2039713/157.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 6/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2039713/157.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 7/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2039713/157.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2176137/120.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2176137/130.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2176137/373.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090608/6.jpg (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:992)')))
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090608/139.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2021857/195.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2021857/197.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090365/109.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090607/162.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 2/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090607/162.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 3/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090607/162.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 4/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090607/162.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 5/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090607/162.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 6/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090607/162.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 7/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2090607/162.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2113456/87.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Retry 1/8 after HTTPSConnectionPool(host='i.nhentai.net', port=443): Max retries exceeded with url: /galleries/2113456/94.jpg (Caused by ProxyError('Cannot connect to proxy.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None)))
+Three consecutive images of the same size detected, stopping download!
+Three consecutive images of the same size detected, stopping download!
