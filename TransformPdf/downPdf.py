@@ -51,6 +51,7 @@ def jpgs_to_pdf(folder_path, error_log):
     images.clear()
     gc.collect()
 
+
 def convert_all_folders(base_folder_paths):
     error_log = []
 
