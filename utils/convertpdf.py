@@ -6,9 +6,8 @@ import datetime
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-base_folder_paths = [r'E:\Storage\Book\Manga\Hanime\spider1\Book',]
-
-downloadPdfPath = r'E:\Storage\Book\Manga\Hanime\spider1\Book' 
+base_folder_paths = [r'..\book',]
+downloadPdfPath = r'..\book'
 
 
 def jpgs_to_pdf(folder_path, error_log):

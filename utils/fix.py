@@ -5,10 +5,16 @@ import time
 import random
 
 # 待修复的地址BookPath
-BookPath = r'E:\Storage\Book\Manga\Hanime\spider1\Book'
-# BookPath = r'E:\Storage\Book\Manga\Hanime\C同人'
+BookPath = r'..\..\book'
+# BookPath = r'E:\Storage\book\Manga\Hanime\C同人'
 useurl = f'https://i.nhentai.net/galleries/'
-fixFilePath = r'E:\Storage\Book\Manga\Hanime\spider1\fix_wait.txt'
+fixFilePath = r'.\list\fix_wait.txt'
+
+# 获取脚本所在的目录
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# 设置工作目录为脚本所在的目录
+os.chdir(script_dir)
 
 
 def is_complete_jpeg(file_path):
@@ -94,6 +100,11 @@ def download2(file_path, picture_url):
                     f.write(r.content)
                 if is_complete_png(file_path):
                     return True
+                else:
+                    # print(f"File downloaded but incomplete, retrying: {file_path}")
+                    if not is_complete_png(file_path):
+                        print(f'Unknown File Extension.{file_path}')
+                        return True
         except requests.exceptions.RequestException as e:
             pass
         sleep_time = random.uniform(1, 3)

@@ -3,9 +3,15 @@ import re
 import requests
 import time
 import random
-downloadPath = r'E:\Storage\Book\Manga\Hanime\spider1\GetBook\List\Target_2.txt'
-BookPath = r'E:\Storage\Book\Manga\Hanime\spider1\Book'
-useurl = f'https://i3.nhentai.net/galleries/'
+downloadPath = r'..\list\target_1.txt'
+BookPath = r'..\..\book'
+useurl = f'https://i.nhentai.net/galleries/'
+
+# 获取脚本所在的目录
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# 设置工作目录为脚本所在的目录
+os.chdir(script_dir)
 
 
 def is_complete_jpeg(file_path):
@@ -80,7 +86,9 @@ def download2(file_path, picture_url):
                     return True
                 else:
                     # print(f"File downloaded but incomplete, retrying: {file_path}")
-                    pass
+                    if not is_complete_png(file_path):
+                        print(f'Unknown File Extension.{file_path}')
+                        return True
             else:
                 # print(f"Failed to download, status code: {r.status_code}")
                 pass

@@ -3,10 +3,15 @@ import re
 import requests
 import time
 import random
-downloadPath = r'E:\Storage\Book\Manga\Hanime\spider1\GetBook\List\Target_Restart.txt'
-BookPath = r'E:\Storage\Book\Manga\Hanime\spider1\Book'
-useurl = f'https://i.nhentai.net/galleries/'
+downloadPath = r'..\list\target_2.txt'
+BookPath = r'..\..\book'
+useurl = f'https://i3.nhentai.net/galleries/'
 
+# 获取脚本所在的目录
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# 设置工作目录为脚本所在的目录
+os.chdir(script_dir)
 
 def is_complete_jpeg(file_path):
     """ 检查JPEG文件是否完整 """
@@ -15,7 +20,7 @@ def is_complete_jpeg(file_path):
             f.seek(-2, os.SEEK_END)
             return f.read() == b'\xff\xd9'
     except Exception as e:
-        print(f"Error checking file completeness: {e}")
+        # print(f"Error checking file completeness: {e}")
         return False
 
 
@@ -26,7 +31,7 @@ def is_complete_png(file_path):
             f.seek(-8, os.SEEK_END)
             return f.read() == b'\x89\x50\x4E\x47\x0D\x0A\x1A\x0A'
     except Exception as e:
-        print(f"Error checking file completeness: {e}")
+        # print(f"Error checking file completeness: {e}")
         return False
 
 
@@ -40,7 +45,7 @@ def download(file_path, picture_url):
         try:
             r = requests.get(picture_url, headers=headers, stream=True)
             if r.status_code == 404:
-                print(f"File not found (404): {picture_url}")
+                # print(f"File not found (404): {picture_url}")
                 return False  # 404时退出
             if r.status_code == 200:
                 with open(file_path, 'wb') as f:
@@ -48,13 +53,13 @@ def download(file_path, picture_url):
                 if is_complete_jpeg(file_path):
                     return True
                 else:
-                    print(f"File downloaded but incomplete, retrying: {file_path}")
+                    # print(f"File downloaded but incomplete, retrying: {file_path}")
                     pass
             else:
-                print(f"Failed to download, status code: {r.status_code}")
+                # print(f"Failed to download, status code: {r.status_code}")
                 pass
         except requests.exceptions.RequestException as e:
-            print(f'Retry {i + 1}/{max_retries} after {e}')
+            # print(f'Retry {i + 1}/{max_retries} after {e}')
             pass
         sleep_time = random.uniform(1, 3)  # 生成1到3秒之间的随机睡眠时间
         time.sleep(sleep_time)  # 随机延迟重试
@@ -71,7 +76,7 @@ def download2(file_path, picture_url):
         try:
             r = requests.get(picture_url, headers=headers, stream=True)
             if r.status_code == 404:
-                print(f"File not found (404): {picture_url}")
+                # print(f"File not found (404): {picture_url}")
                 return False  # 404时退出
             if r.status_code == 200:
                 with open(file_path, 'wb') as f:
@@ -79,13 +84,15 @@ def download2(file_path, picture_url):
                 if is_complete_png(file_path):
                     return True
                 else:
-                    print(f"File downloaded but incomplete, retrying: {file_path}")
-                    pass
+                    # print(f"File downloaded but incomplete, retrying: {file_path}")
+                    if not is_complete_png(file_path):
+                        print(f'Unknown File Extension.{file_path}')
+                        return True
             else:
-                print(f"Failed to download, status code: {r.status_code}")
+                # print(f"Failed to download, status code: {r.status_code}")
                 pass
         except requests.exceptions.RequestException as e:
-            print(f'Retry {i + 1}/{max_retries} after {e}')
+            # print(f'Retry {i + 1}/{max_retries} after {e}')
             pass
         sleep_time = random.uniform(1, 3)  # 生成1到3秒之间的随机睡眠时间
         time.sleep(sleep_time)  # 随机延迟重试

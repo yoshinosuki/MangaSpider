@@ -1,14 +1,23 @@
-import subprocess
+import os
 from datetime import datetime
 
+# 获取脚本所在的目录
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# 设置工作目录为脚本所在的目录
+os.chdir(script_dir)
+
 # 定义文件路径
-id_file_path = 'id.txt'
-new_file_path = 'new.txt'
-output_file_path = 'new_filtered.txt'
+id_file_path = './list/id.txt'
+new_file_path = './list/id_new.txt'
+output_file_path = './list/id_filtered.txt'
 
 
 def read_file(file_path):
-    """读取文件并返回每行内容组成的集合"""
+    """读取文件并返回每行内容组成的集合。"""
+    if not os.path.exists(file_path):
+        with open(file_path, 'w') as file:
+            pass
     with open(file_path, 'r') as file:
         return set(line.strip() for line in file if line.strip())
 
@@ -94,12 +103,12 @@ def main():
     numbers = read_numbers_from_file(output_file_path)
     distributed_files = distribute_numbers(numbers)
     for i in range(1, 4):
-        write_numbers_to_file(f'./GetBook/List/Target_{i}.txt', distributed_files[i])
+        write_numbers_to_file(f'./list/target_{i}.txt', distributed_files[i])
 
     # 追加new_filtered.txt内容到id.txt并记录日志
     new_filtered_set = read_file(output_file_path)
     append_to_file(id_file_path, new_filtered_set)
-    log_append_action('log.txt', new_filtered_set)
+    log_append_action('./list/log.txt', new_filtered_set)
 
 
 if __name__ == "__main__":

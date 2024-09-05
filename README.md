@@ -1,7 +1,7 @@
 # 一款网络爬虫
 
 ## 效果图
-<img src="./README/示例.jpg">
+<img src="./static/example.jpg" width="480p">
 
 ## 使用方法
 - 运行GetID，获取某个分类下的前5页内容（可自定义分类和书页）
@@ -12,6 +12,7 @@
 - 可以使用read读取book文件夹内全部图书
 - 如遇修复不了的意外，可将未下载完成的图书id加入Target_Restart文件中，运行restart。
     或者运行fix.py自动检查错误
+- 文件夹（除了Book内的）不要删，也不要动！！！！
 
 ## powershell启动示例
 ```powershell
@@ -36,15 +37,17 @@ if ($choice -eq '111') {
     & $pythonExe "$scriptPath\FastDL.py"
     Start-Sleep -Seconds 3
     & $pythonExe "$scriptPath\fix.py"
+    
+    Pause
 } else {
-    Write-Host "无效输入，请输入 '111' 或 '222'."
+    Write-Host "无效输入."
 }
 
 ```
 
 
 
-## 文件夹（除了Book内的）不要删，也不要动！！！！
+## 历史版本
 
 ### 1.3
 - **修复了因多进程导致的互锁问题**
@@ -52,10 +55,12 @@ if ($choice -eq '111') {
 - 加入下载文件的完整性检查
 - 优化代码结构，方便维护修改
 
+
 ### 1.2
 - 可以使用downpdf直接将文件夹内的图片转换成pdf
 - 自动生成分类pdf
 - 加入多线程一键启动
+
 
 ### 1.1
 - 正式版 一款网络爬虫
