@@ -4,15 +4,22 @@
 <img src="./static/example.jpg" width="480p">
 
 ## 使用方法
-- 运行GetID，获取某个分类下的前5页内容（可自定义分类和书页）
-- 运行handingOut分配任务（不要多次运行，否则会因为覆盖而产生异常）
-- 运行FastDL进行下载任务
+- 运行前需要安装playwright相关支持
+```commandline
+    pip install playwright
+    playwright install
+```
+- 运行main，通过自行选择即可轻松开始下载
+
+### 各部分含义及作用
+- 运行get_id，获取某个分类下的前5页内容（可自定义分类和书页）
+- 运行handing分配任务（不要多次运行，否则会因为覆盖而产生异常）
+- 运行download进行下载任务
+- 运行fix.py自动检查可能会产生的错误
 - 运行完成后在book文件夹即可找到
-- 可以使用downpdf直接将文件夹内的图书转换成pdf
-- 可以使用read读取book文件夹内全部图书
+- 可以使用convertpdf直接将文件夹内的图书转换成pdf
 - 如遇修复不了的意外，可将未下载完成的图书id加入Target_Restart文件中，运行restart。
-    或者运行fix.py自动检查错误
-- 文件夹（除了Book内的）不要删，也不要动！！！！
+
 
 ## powershell启动示例
 ```powershell
@@ -110,6 +117,9 @@ else {
 
 
 ## 历史版本
+
+### 1.4
+- 最终稳定版，可移植性高，未来不会继续更新
 
 ### 1.3
 - **修复了因多进程导致的互锁问题**
