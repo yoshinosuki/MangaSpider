@@ -18,7 +18,8 @@
 - 运行fix.py自动检查可能会产生的错误
 - 运行完成后在book文件夹即可找到
 - 可以使用convertpdf直接将文件夹内的图书转换成pdf
-- 如遇修复不了的意外，可将未下载完成的图书id加入Target_Restart文件中，运行restart。
+- 如遇修复不了的意外，可将未下载完成的图书id加入Target_Restart文件中，运行restart
+- restart提供了全部错误提示，方便查看错误环节
 
 
 ## powershell启动示例
