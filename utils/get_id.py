@@ -8,8 +8,6 @@ from playwright.sync_api import sync_playwright
 
 # 获取脚本所在的目录
 script_dir = os.path.dirname(os.path.abspath(__file__))
-
-# 设置工作目录为脚本所在的目录
 os.chdir(script_dir)
 
 
@@ -19,6 +17,7 @@ def get_html(page, url):
 
 
 def parse_html(html_text):
+    """ 筛选包含jpg的url """
     picre = re.compile(r'[a-zA-z]+://[^\s]*\.jpg')  # 本正则式得到.jpg结尾的url
     pic_list = []
     for pic_url in picre.findall(html_text):
@@ -34,15 +33,15 @@ def main(url_prefix):
         page = browser.new_page()
         time.sleep(5)
 
-        for page_num in range(1, 6):
+        for page_num in range(1, 6):  # 运行1~5页
             url = url_prefix + str(page_num)
             html_text = get_html(page, url)
             pic_list = parse_html(html_text)
-            with open('.\list\id_new.txt', 'a') as f:  # 使用追加模式打开文件，将结果追加到文件末尾
+            with open('.\list\id_new.txt', 'a') as f:
                 for pic_url in pic_list:
                     f.write(pic_url + '\n')
-            sleep_time = random.uniform(1, 3)  # 生成1到3秒之间的随机睡眠时间
-            time.sleep(sleep_time)  # 添加随机延时，避免请求过于频繁被网站屏蔽
+            sleep_time = random.uniform(1, 3)
+            time.sleep(sleep_time)
 
         browser.close()
 

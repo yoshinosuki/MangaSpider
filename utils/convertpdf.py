@@ -11,9 +11,8 @@ downloadPdfPath = r'..\book'
 
 
 def jpgs_to_pdf(folder_path, error_log):
-    # 获取文件夹名
     folder_name = os.path.basename(folder_path)
-    # 获取所有jpg文件
+    # 获取所有文件
     jpg_files = [f for f in os.listdir(folder_path) if f.lower().endswith(('.jpg', '.png'))]
     
     # 按文件名中的数字排序

@@ -14,7 +14,7 @@ output_file_path = './list/id_filtered.txt'
 
 
 def read_file(file_path):
-    """读取文件并返回每行内容组成的集合。"""
+    """ 读取文件并返回每行内容组成的集合 """
     if not os.path.exists(file_path):
         with open(file_path, 'w') as file:
             pass
@@ -23,21 +23,21 @@ def read_file(file_path):
 
 
 def write_file(file_path, data):
-    """将数据写入文件"""
+    """ 将数据写入文件 """
     with open(file_path, 'w') as file:
         for item in data:
             file.write(f"{item}\n")
 
 
 def append_to_file(file_path, data):
-    """将数据追加到文件"""
+    """ 将数据追加到文件 """
     with open(file_path, 'a') as file:
         for item in data:
             file.write(f"{item}\n")
 
 
 def remove_duplicates(id_file, new_file, output_file):
-    """移除new_file中在id_file中出现过的数字"""
+    """ 移除new_file中在id_file中出现过的数字 """
     id_set = read_file(id_file)
     new_set = read_file(new_file)
     # 从new_set中移除在id_set中存在的项
@@ -58,12 +58,12 @@ def write_numbers_to_file(filename, numbers):
 
 
 def distribute_numbers(numbers):
+    """ 分配id """
     files = {1: [], 2: [], 3: []}
     length = len(numbers)
     # 按照顺序分配数字
     for i in range(length):
         files[(i % 3) + 1].append(numbers[i])
-    # 将多余的数字分配给1.txt，但要先检查是否存在
     remainder = length % 3
     extra_numbers = []
     if remainder == 1:
@@ -79,7 +79,7 @@ def distribute_numbers(numbers):
 
 
 def log_append_action(log_file, data):
-    """记录追加操作到日志文件"""
+    """ 记录追加操作到日志文件 """
     with open(log_file, 'a') as file:
         file.write(f"Appended on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}:\n")
         for item in data:
@@ -89,7 +89,7 @@ def log_append_action(log_file, data):
 
 
 def log_append_action_notime(log_file, data):
-    """记录追加操作到日志文件"""
+    """ 记录追加操作到日志文件 """
     with open(log_file, 'a') as file:
         for item in data:
             file.write(f"{item}\n")
