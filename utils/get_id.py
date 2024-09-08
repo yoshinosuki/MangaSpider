@@ -3,7 +3,6 @@ import re
 import time
 import os
 import argparse
-import playwright
 from playwright.sync_api import sync_playwright
 
 # 获取脚本所在的目录
