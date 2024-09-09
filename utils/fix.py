@@ -131,6 +131,7 @@ def download2(file_path, picture_url):
 
 
 def remove_file(file_path):
+    """ 如果存在文件则删除文件 """
     if os.path.exists(file_path):
         os.remove(file_path)
         print(f"已删除文件: {file_path}")
