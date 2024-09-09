@@ -9,7 +9,7 @@ def test_web():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE",
     }
-    max_retries = 4  # 最大重试次数
+    max_retries = 3  # 最大重试次数
     for i in range(max_retries):
         try:
             r = requests.get('https://nhentai.net', headers=headers, stream=True)
@@ -19,6 +19,7 @@ def test_web():
         except requests.exceptions.RequestException as e:
             print(f'Retry {i + 1}/{max_retries} after {e}')
             pass
+    print(f'网络连接失败')
 
 
 def run_script(script):

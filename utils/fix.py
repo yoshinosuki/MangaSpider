@@ -17,6 +17,24 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(script_dir)
 
 
+def test_web():
+    """ 网络测试 """
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE",
+    }
+    max_retries = 3  # 最大重试次数
+    for i in range(max_retries):
+        try:
+            r = requests.get('https://nhentai.net', headers=headers, stream=True)
+            if r.status_code == 200:
+                print(f"网络测试成功")
+                return True
+        except requests.exceptions.RequestException as e:
+            print(f'Retry {i + 1}/{max_retries} after {e}')
+            pass
+    print(f'网络连接失败,尝试修复失败')
+
+
 def is_complete_jpeg(file_path):
     """ 检查JPEG文件是否完整 """
     try:
@@ -142,4 +160,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    if test_web():
+        main()
