@@ -21,7 +21,7 @@ def main():
 
     if choice1 == '1':
         choice2 = input(
-            "Enter '1' to download using default category\nEnter '2' to download Chinese category\nEnter '3' to download uncensored Chinese category\nEnter '4' to download using a url\n")
+            "Enter '1' to download using default category\nEnter '2' to download Chinese category\nEnter '3' to download uncensored Chinese category\nEnter '4' to download by using a url\n")
 
         if choice2 == '1':
             subprocess.run([sys.executable, os.path.join(script_path, "get_id.py")])

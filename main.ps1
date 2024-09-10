@@ -22,7 +22,7 @@ function Validate-Url {
     }
 }
 if ($choice1 -eq '1') {
-    $choice2 = Read-Host "Enter '1' to download using default category`nEnter '2' to download Chinese category`nEnter '3' to download uncensored Chinese category`nEnter '4' to download using a url`n"
+    $choice2 = Read-Host "Enter '1' to download using default category`nEnter '2' to download Chinese category`nEnter '3' to download uncensored Chinese category`nEnter '4' to download by using a url`n"
     if ($choice2 -eq '1') {
         & $pythonExe "$scriptPath\get_id.py"
         Start-Sleep -Seconds 3
