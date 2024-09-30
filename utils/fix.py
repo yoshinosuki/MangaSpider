@@ -5,7 +5,7 @@ import time
 import random
 
 # 待修复的地址BookPath
-BookPath = r'..\..\book'
+BookPath = r'..\book'
 # BookPath = r'E:\Storage\book\Manga\Hanime\C同人'
 useurl = f'https://i.nhentai.net/galleries/'
 fixFilePath = r'.\list\fix_wait.txt'
@@ -61,6 +61,7 @@ def check_and_generate_download_links(book_path):
     for root, dirs, files in os.walk(book_path):
         for file in files:
             file_path = os.path.join(root, file)
+            print("正在检查" + str(file_path))
             if file.endswith('.jpg') and not is_complete_jpeg(file_path):
                 incomplete_files.append(file_path)
                 if file.endswith('.png') and not is_complete_png(file_path):
