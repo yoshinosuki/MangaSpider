@@ -44,7 +44,7 @@ def download(file_path, picture_url):
     max_retries = 8  # 最大重试次数
     for i in range(max_retries):
         try:
-            r = requests.get(picture_url, headers=headers, stream=True)
+            r = requests.get(picture_url, headers=headers, stream=True, timeout=10)
             if r.status_code == 404:
                 # print(f"File not found (404): {picture_url}")
                 return False  # 404时退出
@@ -75,7 +75,7 @@ def download2(file_path, picture_url):
     max_retries = 8  # 最大重试次数
     for i in range(max_retries):
         try:
-            r = requests.get(picture_url, headers=headers, stream=True)
+            r = requests.get(picture_url, headers=headers, stream=True, timeout=10)
             if r.status_code == 404:
                 # print(f"File not found (404): {picture_url}")
                 return False  # 404时退出
