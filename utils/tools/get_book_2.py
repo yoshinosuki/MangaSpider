@@ -43,7 +43,7 @@ def download(file_path, picture_url):
     max_retries = 8  # 最大重试次数
     for i in range(max_retries):
         try:
-            r = requests.get(picture_url, headers=headers, stream=True)
+            r = requests.get(picture_url, headers=headers, stream=True, timeout=10)
             if r.status_code == 404:
                 # print(f"File not found (404): {picture_url}")
                 return False  # 404时退出
@@ -119,7 +119,7 @@ def main():
         match = re.search(r'galleries/(\d+)', prefix_url)
         if match:
             webname = str(m)
-        os.makedirs(os.path.join(BookPath, webname), exist_ok=True, timeout=10)
+        os.makedirs(os.path.join(BookPath, webname), exist_ok=True)
         n = 3000  # 页数
         start_page = get_max_file_number(os.path.join(BookPath, webname)) + 1  # 获取起始页数
         """单点续传"""
